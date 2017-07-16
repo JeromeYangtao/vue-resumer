@@ -1,6 +1,17 @@
 <template>
   <div id="editor">
-      i am editor
+      <nav>
+          <ol>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+          </ol>
+      </nav>
+      <ol class="panes"></ol>
   </div>
 </template>
 

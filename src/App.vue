@@ -36,15 +36,26 @@ export default {
     flex-direction: column;
   }
   .topbar{
+    box-shadow: 0 0 3px hsla(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
   }
   main{
     display: flex;
     flex: 1;
+    background: #ddd;
     > .editor{
-      width: 20em;
+      width: 40em;
+      margin: 16px 8px 16px 16px;
+      background: white;
+      border-radius: 4px; 
     }
     > .preview{
       flex: 1;
+      margin: 16px 16px 16px 8px;
+      background: white;
+      box-shadow: 0 0 3px hsla(0, 0, 0, 0.5);
+      border-radius: 4px; 
     }
   }
 </style>
