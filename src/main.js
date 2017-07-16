@@ -7,6 +7,11 @@ import 'normalize.css'
 //引入自己写的CSS
 import './assets/reset.scss'
 
+// 使用饿了么组件
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
+
+Vue.use(ElementUI)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

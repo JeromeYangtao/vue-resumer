@@ -36,10 +36,8 @@ export default {
     flex-direction: column;
   }
   .topbar{
-    background: red;
   }
   main{
-    background: green;
     display: flex;
     flex: 1;
     > .editor{
