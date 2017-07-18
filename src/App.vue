@@ -55,7 +55,7 @@ export default {
       margin: 16px 8px 16px 16px;
       background: white;
       border-radius: 4px; 
-      overflow: hidden;
+      overflow: auto;
     }
     > .preview{
       flex: 1;
@@ -63,7 +63,7 @@ export default {
       background: white;
       box-shadow: 0 0 3px hsla(0, 0, 0, 0.5);
       border-radius: 4px; 
-      overflow: hidden;
+      overflow: auto;
     }
   }
 </style>

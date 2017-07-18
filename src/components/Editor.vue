@@ -29,14 +29,17 @@
         <li v-bind:class="{active:currentTab === 1}">
             <h2>工作经历</h2>
             <el-form>
-                <div v-for="work in workHistory">
+                <div v-for="(work,index) in workHistory" class="container">
                     <el-form-item label="公司">
                         <el-input v-model="work.company"></el-input>
                     </el-form-item>
                     <el-form-item label="工作内容">
                         <el-input v-model="work.content"></el-input>
                     </el-form-item>
+                    <i class="el-icon-delete" v-on:click="removeWorkHistory(index)"></i>
+                    <hr>
                 </div>
+                <el-button type="primary" v-on:click="addWorkHistory">添加一项</el-button>
             </el-form>
         </li>
         <li v-bind:class="{active:currentTab === 2}">
@@ -70,6 +73,17 @@
                 {company: '', content: ''}
             ]
         }
+    },
+    methods:{
+        addWorkHistory:function(){
+            this.workHistory.push({
+                company:'',
+                content:''
+            })
+        },
+        removeWorkHistory:function(index){
+            this.workHistory.splice(index,1)
+        }
     }
 }
 </script>
@@ -78,7 +92,7 @@
 <style lang="scss">
     #editor{
         min-height: 100px;
-        display: flex;
+        display: flex; 
         nav {
             background: #000;
             width: 80px;
@@ -99,13 +113,24 @@
             }
         }
         .panes {
+             flex:1;
             > li {
                 display: none;
                 padding:32px;
                 min-width:20em;
+                height:100%;
+                overflow:auto;
             }
             > li.active{
                 display: block;
+            }
+            .container {
+                position:relative;
+                > .el-icon-delete{
+                   position:absolute;
+                   right:0;
+                   top:0;
+                }
             }
         }
     }
