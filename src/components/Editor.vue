@@ -13,18 +13,7 @@
     </nav>
     <ol class="panes">
         <li v-bind:class="{active:currentTab === 0}">
-            <h2>个人信息</h2>
-            <el-form :model="profile">
-                <el-form-item label="名称">
-                    <el-input v-model="profile.name"></el-input>
-                </el-form-item>
-                <el-form-item label="城市">
-                    <el-input v-model="profile.city"></el-input>
-                </el-form-item>
-                <el-form-item label="出生">
-                    <el-input v-model="profile.birth"></el-input>
-                </el-form-item>
-            </el-form>
+            <ProfileEditor v-bind:profile='profile'/>
         </li>
         <li v-bind:class="{active:currentTab === 1}">
             <h2>工作经历</h2>
@@ -59,7 +48,9 @@
 </template>
 
 <script>
+  import ProfileEditor from './ProfileEditor'
   export default {
+    components:{ProfileEditor},
     data(){
         return {
             currentTab: 0,
