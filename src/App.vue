@@ -98,24 +98,26 @@ export default {
       border-radius: 4px; 
       overflow: auto;
     }
-  }
-  .previewMode #topbar {
+    .previewMode #topbar {
       display: none;
-  }
-  .previewMode #editor {
+    }
+    .previewMode #editor {
       display: none;
-  }
-  .previewMode #preview {
+    }
+    .previewMode #preview {
       max-width: 800px;
       margin: 32px auto;
+    }
+    #exitPreview {
+      display: none;
+    }
+    .previewMode #exitPreview{
+      display: inline-block;
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+    }
   }
-  #exitPreview {
-    display: none;
-  }
-  .previewMode #exitPreview{
-    display: inline-block;
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-  }
+
+
 </style>
