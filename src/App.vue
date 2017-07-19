@@ -90,7 +90,7 @@ export default {
       border-radius: 4px; 
       overflow: auto;
     }
-    > .preview{
+    .preview{
       flex: 1;
       margin: 16px 16px 16px 8px;
       background: white;
@@ -98,26 +98,26 @@ export default {
       border-radius: 4px; 
       overflow: auto;
     }
-    .previewMode #topbar {
-      display: none;
-    }
-    .previewMode #editor {
-      display: none;
-    }
-    .previewMode #preview {
-      max-width: 800px;
-      margin: 32px auto;
-    }
+    
     #exitPreview {
       display: none;
     }
-    .previewMode #exitPreview{
-      display: inline-block;
-      position: fixed;
-      bottom: 16px;
-      right: 16px;
-    }
   }
-
+  #app.previewMode #topbar {
+      display: none;
+  }
+  #app.previewMode #editor {
+      display: none;
+  }
+  #app.previewMode #preview {
+    max-width: 800px;
+    margin: 32px auto;
+  }
+  #app.previewMode #exitPreview{
+    display: inline-block;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+  }
 
 </style>
