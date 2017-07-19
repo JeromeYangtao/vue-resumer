@@ -16,13 +16,13 @@
             <ProfileEditor v-bind:profile='profile'/>
         </li>
         <li v-bind:class="{active:currentTab === 1}">
-            <ArrayEditor v-bind:items="workHistory" v-bind:labels='{company:"公司",content:"工作内容"}'/>
+            <ArrayEditor v-bind:items="workHistory" v-bind:labels='{company:"公司",content:"工作内容"}' v-bind:title="'工作经历'"/>
         </li>
         <li v-bind:class="{active:currentTab === 2}">
-            <ArrayEditor v-bind:items='studyHistory' v-bind:labels='{school:"学校",duration:"时间",degree:"学位"}'/>
+            <ArrayEditor v-bind:items='studyHistory' v-bind:labels='{school:"学校",duration:"时间",degree:"学位"}' v-bind:title="'学习经历'"/>
         </li>
         <li v-bind:class="{active:currentTab === 3}">
-            <h2>项目经历</h2>
+            <ArrayEditor v-bind:items='projects' v-bind:labels='{name:"项目名称",content: "工作内容"}' v-bind:title="'项目经历'"/>
         </li>
         <li v-bind:class="{active:currentTab === 4}">
             <h2>获奖情况</h2>
@@ -53,6 +53,9 @@
             ],
             studyHistory:[
                 {school: '',duration: '',degree: ''}
+            ],
+            projects: [
+                {name: '', content: ''}
             ]
         }
     },

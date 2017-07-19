@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>工作经历</h2>
+        <h2>{{title}}</h2>
         <el-form>
             <div v-for="(work,index) in items" class="container" v-bind:key="index">
                 <el-form-item v-for="key in keys" v-bind:label="labels[key] || key" v-bind:key="key">
@@ -16,7 +16,7 @@
 
 <script>
   export default {
-    props: ['items','labels'],
+    props: ['items','labels','title'],
     computed: {
         keys(){
             return Object.keys(this.items[0])
