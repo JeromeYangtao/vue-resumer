@@ -2,8 +2,8 @@
   <div id="app">
     <Topbar class="topbar"/>
     <main>
-      <Editor class="editor"/>
-      <Preview class="preview"/>
+      <Editor v-bind:resume="resume" class="editor"/>
+      <Preview v-bind:resume="resume" class="preview"/>
     </main>
 
   </div>
@@ -15,6 +15,32 @@ import Editor from './components/Editor'
 import Preview from './components/Preview'
 export default {
   name: 'app',
+  data() {
+    return{
+      resume: {
+        profile:{
+            name:'',
+            city:'',
+            birth:''
+        },
+        workHistory: [
+            {company: '', content: ''}
+        ],
+        studyHistory: [
+            {school: '',duration: '',degree: ''}
+        ],
+        projects: [
+            {name: '', content: ''}
+        ],
+        awards: [
+            {name: ''}
+        ],
+        contacts: [
+            {email: '',phone: '',qq: '',wechat: ''}
+        ]
+      }
+    }  
+  },
   components: {
     Topbar,Editor,Preview
   }
