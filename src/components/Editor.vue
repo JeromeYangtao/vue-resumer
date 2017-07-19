@@ -19,7 +19,7 @@
             <WorkHistoryEditor v-bind:workHistory='workHistory'/>
         </li>
         <li v-bind:class="{active:currentTab === 2}">
-            <h2>学习经历</h2>
+            <StudyHistoryEditor v-bind:items='studyHistory'/>
         </li>
         <li v-bind:class="{active:currentTab === 3}">
             <h2>项目经历</h2>
@@ -37,8 +37,9 @@
 <script>
   import ProfileEditor from './ProfileEditor'
   import WorkHistoryEditor from './WorkHistoryEditor'
+  import StudyHistoryEditor from './StudyHistoryEditor'
   export default {
-    components:{ProfileEditor,WorkHistoryEditor},
+    components:{ProfileEditor,WorkHistoryEditor,StudyHistoryEditor},
     data(){
         return {
             currentTab: 0,
@@ -50,6 +51,9 @@
             },
             workHistory: [
                 {company: '', content: ''}
+            ],
+            studyHistory:[
+                {school: '',duration: '',degree: ''}
             ]
         }
     },
