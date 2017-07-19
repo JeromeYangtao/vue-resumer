@@ -4,7 +4,7 @@
         <ol>
             <li v-for="i in [0,1,2,3,4,5]"
              v-bind:class="{active: currentTab === i}"
-             v-on:click="currentTab = i">
+             v-on:click="currentTab = i" v-bind:key="i">
                 <svg class="icon">
                     <use v-bind:xlink:href="`#icon-${icons[i]}`"></use>
                 </svg>
@@ -16,10 +16,10 @@
             <ProfileEditor v-bind:profile='profile'/>
         </li>
         <li v-bind:class="{active:currentTab === 1}">
-            <WorkHistoryEditor v-bind:workHistory='workHistory'/>
+            <ArrayEditor v-bind:items="workHistory" v-bind:labels='{company:"公司",content:"工作内容"}'/>
         </li>
         <li v-bind:class="{active:currentTab === 2}">
-            <StudyHistoryEditor v-bind:items='studyHistory'/>
+            <ArrayEditor v-bind:items='studyHistory' v-bind:labels='{school:"学校",duration:"时间",degree:"学位"}'/>
         </li>
         <li v-bind:class="{active:currentTab === 3}">
             <h2>项目经历</h2>
@@ -36,10 +36,9 @@
 
 <script>
   import ProfileEditor from './ProfileEditor'
-  import WorkHistoryEditor from './WorkHistoryEditor'
-  import StudyHistoryEditor from './StudyHistoryEditor'
+  import ArrayEditor from './ArrayEditor'
   export default {
-    components:{ProfileEditor,WorkHistoryEditor,StudyHistoryEditor},
+    components:{ProfileEditor,ArrayEditor},
     data(){
         return {
             currentTab: 0,
