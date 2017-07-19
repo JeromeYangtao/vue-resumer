@@ -35,9 +35,7 @@ export default {
         awards: [
             {name: ''}
         ],
-        contacts: [
-            {email: '',phone: '',qq: '',wechat: ''}
-        ]
+        contacts: {email: '',phone: '',qq: '',wechat: ''}
       }
     }  
   },

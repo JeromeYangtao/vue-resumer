@@ -27,7 +27,7 @@
         <li v-bind:class="{active:currentTab === 4}">
             <ArrayEditor v-bind:items='resume.awards' v-bind:labels='{name:"获奖名称"}' v-bind:title="'获奖情况'"/>
         </li>
-        <li v-bind:class="{active:currentTab === 5}">
+         <li v-bind:class="{active:currentTab === 5}">
             <h2>联系方式</h2>
             <el-form>
                 <el-form-item label="邮箱">
@@ -42,9 +42,8 @@
                 <el-form-item label="微信">
                     <el-input v-model="resume.contacts.wechat"></el-input>
                 </el-form-item>
-            </el-form> 
-            
-        </li>
+            </el-form>        
+        </li> 
       </ol>
   </div>
 </template>
