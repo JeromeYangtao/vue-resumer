@@ -25,7 +25,7 @@
             <ArrayEditor v-bind:items='projects' v-bind:labels='{name:"项目名称",content: "工作内容"}' v-bind:title="'项目经历'"/>
         </li>
         <li v-bind:class="{active:currentTab === 4}">
-            <h2>获奖情况</h2>
+            <ArrayEditor v-bind:items='awards' v-bind:labels='{name:"获奖名称"}' v-bind:title="'获奖情况'"/>
         </li>
         <li v-bind:class="{active:currentTab === 5}">
             <h2>联系方式</h2>
@@ -56,6 +56,9 @@
             ],
             projects: [
                 {name: '', content: ''}
+            ],
+            awards: [
+                {name: ''}
             ]
         }
     },
